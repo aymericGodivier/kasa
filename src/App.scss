@@ -3,33 +3,34 @@
   padding: 2rem;
 }
 
-header {
+header{
   display: flex;
   flex-direction: row;
   justify-content: left;
   width: 100%;
-}
-header nav {
-  display: flex;
-  flex-direction: row;
-  align-self: flex-end;
-}
-header nav li {
-  margin: 2rem;
+  nav{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    li{
+      margin: 2rem;
+    }
+  }
 }
 
-footer {
+footer{
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
   background-color: black;
-}
-footer img {
-  max-width: 10rem;
-}
-footer p {
-  color: white;
-}
 
-/*# sourceMappingURL=App.css.map */
+  img{
+    max-width: 10rem;
+  }
+
+  p{
+    color: white;
+  }
+
+}
