@@ -1,13 +1,17 @@
 #root {
-  max-width: 1280px;
-  padding: 2rem;
+  width: 100%;
+  padding: 0;
 }
 
 header{
   display: flex;
   flex-direction: row;
-  justify-content: left;
   width: 100%;
+  justify-content: space-between;
+  padding-top: 1rem;
+  img{
+    margin-left: 2rem;
+  }
   nav{
     display: flex;
     flex-direction: row;
@@ -18,12 +22,37 @@ header{
   }
 }
 
+.backgroundContainer {
+  position: relative;
+  height: 8rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 1.5rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: -10;
+  }
+  h1{
+    position: absolute;
+    font-size: 2.5rem;
+    color: white; 
+    z-index: 10; 
+  }
+}
+
 footer{
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
   background-color: black;
+  padding: 2rem;
 
   img{
     max-width: 10rem;

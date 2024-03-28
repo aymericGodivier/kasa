@@ -1,12 +1,16 @@
 import './App.css'
 import Header from '../components/header.jsx'
 import Footer from '../components/footer.jsx'
+import BackgroundImage from '../components/background-image.jsx'
 
 function App() {
+
+  const imgTitle = "Chez vous, partout et ailleurs"
   
   return (
     <div>
       <Header></Header>
+      <BackgroundImage imgSrc={"../src/assets/eric-muhr-unsplash.jpg"} imgAlt={"eric-muhr"} title={imgTitle}></BackgroundImage>
       <Footer></Footer>
     </div>
   )
