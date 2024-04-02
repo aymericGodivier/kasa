@@ -1,4 +1,4 @@
-function Footer(){
+export default function Footer(){
     return(
         <footer>
             <img src="../../src/assets/LOGO_KASA_WHITE.svg" alt="Logo white"></img>
@@ -7,4 +7,3 @@ function Footer(){
     )
 }
 
-export default Footer

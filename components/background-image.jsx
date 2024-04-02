@@ -1,4 +1,4 @@
-function BackgroundImage({imgSrc,imgAlt,title}){
+export default function BackgroundImage({imgSrc,imgAlt,title}){
     return(
         <div className="backgroundContainer">
             <img src={imgSrc} alt={imgAlt}></img>
@@ -6,5 +6,3 @@ function BackgroundImage({imgSrc,imgAlt,title}){
         </div>
     )
 }
-
-export default BackgroundImage

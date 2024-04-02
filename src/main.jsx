@@ -7,6 +7,7 @@ import {
 import Root from "./routes/root";
 import ErrorPage from "./error-page";
 import Location from './routes/location';
+import About from './routes/about';
 import './index.css'
 
 const router = createBrowserRouter([
@@ -18,6 +19,14 @@ const router = createBrowserRouter([
   {
     path: "/location",
     element: <Location/>
+  },
+  {
+    path: "/about",
+    element : <About/>
+  },
+  {
+    path: "/location/:id",
+    element: <Location />,
   }
 ]);
 

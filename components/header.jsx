@@ -1,15 +1,16 @@
-function Header(){
+export default function Header(){
     return(
         <header>
             <img src="../../src/assets/LOGO_KASA.svg" alt="Logo"></img>
             <nav>
                 <li>
-                    <a href="/location">Accueil</a>
+                    <a href="/">Accueil</a>
                 </li>
-                <li>A propos</li>
+                <li>
+                    <a href="/about">A propos</a>
+                </li>
             </nav>
         </header>
     )
 }
 
-export default Header
