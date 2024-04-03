@@ -1,4 +1,4 @@
-import './App.css'
+import './css/App.css'
 import Header from '../components/header.jsx'
 import Footer from '../components/footer.jsx'
 import BackgroundImage from '../components/background-image.jsx'
@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <Header></Header>
-        <BackgroundImage imgSrc={"../src/assets/eric-muhr-unsplash.jpg"} imgAlt={"eric-muhr"} title={imgTitle}></BackgroundImage>
+        <BackgroundImage imgSrc={"../src/assets/eric-muhr-unsplash.jpg"} imgAlt={"montagne côtière"} title={imgTitle}></BackgroundImage>
         <LocationGallery/>     
       <Footer></Footer>
     </div>

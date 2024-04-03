@@ -24,7 +24,7 @@ export default function LocationGallery(){
         return (
             <div className="gallery">
                  {data.map((item) => (
-                     <LocationCard key={item.id} title={item.title} />
+                    <LocationCard key={item.id} title={item.title} id={item.id}/>
                 ))}
             </div>
         );
