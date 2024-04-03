@@ -3,6 +3,9 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../components/header.jsx'
 import Footer from '../../components/footer.jsx'
 import FoldingMenu from '../../components/folding-menu.jsx';
+import Carousel from '../../components/carrousel.jsx';
+import Carrousel from '../../components/carrousel.jsx';
+
 export default function Location(){
     const { id } = useParams();
     const [locationDetails, setLocationDetails] = useState([]);
@@ -22,13 +25,12 @@ export default function Location(){
     }, []);
 
     const buildLocation = (data) =>{
-        console.log(data);
         return (
             <div className="location">
-                <Header/>                
-                    <h1>
-                        {data.title}
-                    </h1>
+                <Header/>
+                    <Carrousel images={data.pictures}/>             
+                    <h1>{data.title}</h1>
+                    <span>{data.location}</span>
                     <FoldingMenu menuTitle={"Description"} content={data.description}/>
                     <FoldingMenu menuTitle={"Équipements"} content={data.equipments}/>
                 <Footer/>
