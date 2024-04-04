@@ -9,14 +9,19 @@ function Carrousel({ images }) {
     };
 
     return (
-        <div className="carousel">
+        <div className="carrousel">
             {images.length > 1 && (
                 <>
-                    <button onClick={() => handleClick('prev')}>&#8249;</button>
-                    <button onClick={() => handleClick('next')}>&#8250;</button>
+                    <img src='../../src/assets/Chevron.png' id='buttonPrev' onClick={() => handleClick('prev')}></img>
+                    <img src='../../src/assets/Chevron.png' id='buttonNext' onClick={() => handleClick('next')}></img>
                 </>
             )}
-            <img src={images[index]} alt={`Slide ${index + 1}`} />
+            <div className='carrousel-img'>
+                <img src={images[index]} alt={`Slide ${index + 1}`} />
+            </div>            
+            {images.length > 1 && (
+                <span className="slide-counter">{index + 1}/{images.length}</span>
+            )}
         </div>
     );
 }

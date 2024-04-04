@@ -85,6 +85,56 @@ header{
   }
 }
 
+.location{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carrousel{
+  display: flex;
+  align-self: center;
+  position: relative;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 2rem;
+
+  #buttonPrev, #buttonNext {
+    width: 8rem;
+    position: absolute;
+    align-self: center;
+    cursor: pointer;
+  }
+
+  #buttonPrev{
+    transform: rotate(90deg);
+    left: 0;
+  }
+
+  #buttonNext{
+    transform: rotate(270deg);
+    right: 0;
+  }
+
+  div{
+    height: 26rem;
+    overflow: hidden;
+    display: flex;
+    img{
+      align-self: center;
+    }
+  }
+
+  span{
+    position: absolute;
+    align-self: flex-end;
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+}
+
 .about{
   display: flex;
   flex-direction: column;

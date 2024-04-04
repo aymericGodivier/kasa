@@ -28,7 +28,7 @@ export default function Location(){
         return (
             <div className="location">
                 <Header/>
-                    <Carrousel images={data.pictures}/>             
+                    {data.length !==0 && (<Carrousel images={data.pictures}/>)}             
                     <h1>{data.title}</h1>
                     <span>{data.location}</span>
                     <FoldingMenu menuTitle={"Description"} content={data.description}/>

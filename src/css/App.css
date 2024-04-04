@@ -84,6 +84,50 @@ header nav a {
   margin-bottom: 3rem;
 }
 
+.location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carrousel {
+  display: flex;
+  align-self: center;
+  position: relative;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 2rem;
+}
+.carrousel #buttonPrev, .carrousel #buttonNext {
+  width: 8rem;
+  position: absolute;
+  align-self: center;
+  cursor: pointer;
+}
+.carrousel #buttonPrev {
+  transform: rotate(90deg);
+  left: 0;
+}
+.carrousel #buttonNext {
+  transform: rotate(270deg);
+  right: 0;
+}
+.carrousel div {
+  height: 26rem;
+  overflow: hidden;
+  display: flex;
+}
+.carrousel div img {
+  align-self: center;
+}
+.carrousel span {
+  position: absolute;
+  align-self: flex-end;
+  margin-bottom: 2rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
 .about {
   display: flex;
   flex-direction: column;
