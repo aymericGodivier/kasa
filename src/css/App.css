@@ -128,6 +128,51 @@ header nav a {
   font-size: 1.2rem;
 }
 
+.infos-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+.infos-container .title-and-tags {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-and-rating {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+.profile-and-rating div:first-child {
+  display: flex;
+  flex-direction: row;
+}
+.profile-and-rating div:first-child span {
+  max-width: 2rem;
+  margin-right: 1rem;
+  color: #FF6060;
+}
+.profile-and-rating img {
+  border-radius: 50%;
+  max-width: 5rem;
+}
+.profile-and-rating .star {
+  color: grey;
+}
+.profile-and-rating .star.filled {
+  color: red;
+}
+
+.location-folding {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.location-folding div {
+  width: 45%;
+}
+
 .about {
   display: flex;
   flex-direction: column;
@@ -151,6 +196,7 @@ header nav a {
 .folding-menu .menu-header {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   align-items: center;
   background: linear-gradient(to bottom, #FF6060 100%, #FFFFFF 50%);
   padding: 0.5rem;

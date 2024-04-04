@@ -135,6 +135,60 @@ header{
 
 }
 
+.infos-container{
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  justify-content: space-between;
+
+  .title-and-tags{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+.profile-and-rating{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+
+  div:first-child{
+    display: flex;
+    flex-direction: row;
+
+    span{
+      max-width: 2rem;
+      margin-right: 1rem;
+      color: #FF6060;
+    }
+  }
+
+  img{
+    border-radius: 50%;
+    max-width: 5rem;
+  }
+
+  .star {
+    color: grey; 
+  }
+  
+  .star.filled {
+    color: red; 
+  }
+}
+
+.location-folding{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  div{
+    width: 45%;
+  }
+}
+
+
 .about{
   display: flex;
   flex-direction: column;
@@ -158,6 +212,7 @@ header{
   .menu-header {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     align-items: center;
     background: linear-gradient(to bottom, #FF6060 100%, #FFFFFF 50%);
     padding: 0.5rem;
