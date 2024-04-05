@@ -42,7 +42,7 @@ export default function Location(){
                     <div className='infos-container'>
                         <div className='title-and-tags'>
                             <h1>{data.title}</h1>
-                            <span>{data.location}</span>
+                            <span className='localisation'>{data.location}</span>
                             {data.length !==0 && tagBuilder(data.tags)}
                         </div>
                         {data.length !==0 && (<ProfileAndRating name={data.host.name} profilePic={data.host.picture} rating={data.rating}/>)}

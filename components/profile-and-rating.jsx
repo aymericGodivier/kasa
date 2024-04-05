@@ -1,5 +1,7 @@
 export default function ProfileAndRating({ name, profilePic, rating }){
 
+    const [firstName, lastName] = name.split(' ');
+
     const Star =({ filled })=> {
         return (
           <span className={`star ${filled ? 'filled' : ''}`}>★</span>
@@ -14,10 +16,16 @@ export default function ProfileAndRating({ name, profilePic, rating }){
 
     return(
         <div className="profile-and-rating">
-            <div>
-                <span>{name}</span>
-                <img src={profilePic}></img>
-            </div>
+            <div className="profile">
+                <div className="host-name">
+                    <span>{firstName}</span>
+                    <br />
+                    <span>{lastName}</span>
+                </div>
+                <div className="host-img">
+                    <img src={profilePic}></img>
+                </div> 
+            </div>                         
             <div className="rating">{stars}</div>
         </div>
     )

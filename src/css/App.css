@@ -7,12 +7,13 @@
 header {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: auto;
   justify-content: space-between;
   padding-top: 1rem;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
 }
 header img {
-  margin-left: 2rem;
   width: 15rem;
 }
 header nav {
@@ -21,11 +22,13 @@ header nav {
   align-self: flex-end;
 }
 header nav li {
-  margin: 2rem;
+  margin-left: 2rem;
   list-style-type: none;
 }
 header nav a {
   font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
 }
 
 .backgroundContainer {
@@ -36,6 +39,8 @@ header nav a {
   justify-content: center;
   align-items: center;
   margin: 1.5rem;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
   border-radius: 1rem;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -50,7 +55,6 @@ header nav a {
   font-size: 3.5rem;
   color: white;
   z-index: 10;
-  -webkit-text-stroke: 1px black;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
@@ -60,10 +64,15 @@ header nav a {
   flex-wrap: wrap;
   justify-content: center;
   background-color: #F6F6F6;
-  margin: 3rem;
-  padding: 2rem;
+  margin: 3.5rem;
+  margin-top: 3rem;
   margin-bottom: 3rem;
+  padding: 2rem;
   border-radius: 1rem;
+}
+
+.locationCard-link {
+  text-decoration: none;
 }
 
 .locationCard {
@@ -95,7 +104,8 @@ header nav a {
   align-self: center;
   position: relative;
   justify-content: center;
-  width: fit-content;
+  box-sizing: border-box;
+  width: calc(100% - 7rem);
   margin-top: 2rem;
 }
 .carrousel #buttonPrev, .carrousel #buttonNext {
@@ -116,9 +126,11 @@ header nav a {
   height: 26rem;
   overflow: hidden;
   display: flex;
+  width: 100%;
 }
 .carrousel div img {
   align-self: center;
+  width: 100%;
 }
 .carrousel span {
   position: absolute;
@@ -133,44 +145,85 @@ header nav a {
   flex-direction: row;
   margin-top: 1rem;
   justify-content: space-between;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
+}
+.infos-container h1 {
+  margin: 0;
+  color: #FF6060;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
 }
 .infos-container .title-and-tags {
   display: flex;
   flex-direction: column;
+}
+.infos-container .title-and-tags .localisation {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+.tags-list {
+  margin-top: auto;
+  padding-bottom: 0.5rem;
+}
+.tags-list span {
+  margin-right: 1rem;
+  color: white;
+  padding: 0.2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background-color: #FF6060;
+  border-radius: 1rem;
 }
 
 .profile-and-rating {
   display: flex;
   flex-direction: column;
   align-self: flex-end;
+  padding-top: 0.5rem;
 }
-.profile-and-rating div:first-child {
+.profile-and-rating .profile {
   display: flex;
   flex-direction: row;
+  align-self: flex-end;
 }
-.profile-and-rating div:first-child span {
-  max-width: 2rem;
+.profile-and-rating .profile .host-name {
   margin-right: 1rem;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.profile-and-rating .profile .host-name span {
   color: #FF6060;
+  text-align: end;
 }
 .profile-and-rating img {
   border-radius: 50%;
   max-width: 5rem;
+  align-self: flex-end;
 }
 .profile-and-rating .star {
   color: grey;
+  font-size: 2.8rem;
+  margin-left: 0.5rem;
 }
 .profile-and-rating .star.filled {
-  color: red;
+  color: #FF6060;
 }
 
 .location-folding {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
+  margin-bottom: 2rem;
 }
 .location-folding div {
   width: 45%;
+  padding-right: 1rem;
 }
 
 .about {
@@ -213,6 +266,7 @@ header nav a {
   transition: transform 0.3s ease;
 }
 .folding-menu .menu-content {
+  width: 100%;
   transform: translateY(-100%); /* Déplace le contenu vers le haut pour le cacher initialement */
   transition: transform 0.3s ease, height 0.3s ease; /* Transition pour un effet de glissement */
   padding: 0.5rem;
@@ -237,7 +291,6 @@ header nav a {
 }
 
 footer {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -251,6 +304,28 @@ footer img {
 }
 footer p {
   color: white;
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+}
+.error-page h1 {
+  align-self: center;
+  font-size: 15rem;
+  margin: 1rem;
+  color: #FF6060;
+}
+.error-page .error-message {
+  align-self: center;
+  font-size: 2rem;
+  color: #FF6060;
+}
+.error-page a {
+  align-self: center;
+  color: black;
+  margin: 4rem;
+  margin-bottom: 6rem;
 }
 
 /*# sourceMappingURL=App.css.map */
