@@ -2,11 +2,14 @@ export default function ProfileAndRating({ name, profilePic, rating }){
 
     const [firstName, lastName] = name.split(' ');
 
-    const Star =({ filled })=> {
+    const Star = ({ filled }) => {
+        // Déterminez le chemin de l'image en fonction du paramètre filled
+        const starImage = filled ? '../../src/assets/star-filled.png' : '../../src/assets/star-empty.png';
+
         return (
-          <span className={`star ${filled ? 'filled' : ''}`}>★</span>
+            <img className="star" src={starImage} alt="Star" />
         );
-      }
+    }
 
 
       const stars = [];

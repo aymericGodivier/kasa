@@ -5,15 +5,18 @@ import Footer from '../../components/footer.jsx'
 import FoldingMenu from '../../components/folding-menu.jsx';
 import Carrousel from '../../components/carrousel.jsx';
 import ProfileAndRating from '../../components/profile-and-rating.jsx';
+import ErrorPage from './error-page.jsx';
 
 export default function Location(){
     const { id } = useParams();
     const [locationDetails, setLocationDetails] = useState([]);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         const fetchDetails = async (url) => {
             try {
                 const response = await fetch(url);
+                if(!response.ok){setError(true)}
                 const data = await response.json();
                 setLocationDetails(data);
             } catch (error) {
@@ -54,6 +57,10 @@ export default function Location(){
                 <Footer/>
             </div>
         );
+    }
+
+    if(error){
+        return <ErrorPage/>
     }
 
     return(
