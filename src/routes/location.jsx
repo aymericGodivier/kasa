@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from '../../contexts/LocationDetailsContext.jsx';
 import Header from '../../components/header.jsx'
 import Footer from '../../components/footer.jsx'
 import FoldingMenu from '../../components/folding-menu.jsx';
@@ -9,63 +10,49 @@ import ErrorPage from './error-page.jsx';
 
 export default function Location(){
     const { id } = useParams();
-    const [locationDetails, setLocationDetails] = useState([]);
-    const [error, setError] = useState(false);
+    const { locationDetails, fetchDetails, loading, error } = useLocation();
 
     useEffect(() => {
-        const fetchDetails = async (url) => {
-            try {
-                const response = await fetch(url);
-                if(!response.ok){setError(true)}
-                const data = await response.json();
-                setLocationDetails(data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
+        fetchDetails(id);
+    }, [id]);
 
-        fetchDetails(`http://localhost:8080/api/properties/${id}`);
-    }, []);
-
-    const tagBuilder = (data) =>{
-        return (
-            <div className="tags-list">
-                 {data.map((item) => (
-                    <span key={item}>{item}</span>
-                ))}
-            </div>
-        );
+    if (loading) {
+        return <div>Loading...</div>;
     }
 
-    const buildLocation = (data) =>{
-        return (
-            <div className="location">
-                <Header/>
-                    {data.length !==0 && (<Carrousel images={data.pictures}/>)}
-                    <div className='infos-container'>
-                        <div className='title-and-tags'>
-                            <h1>{data.title}</h1>
-                            <span className='localisation'>{data.location}</span>
-                            {data.length !==0 && tagBuilder(data.tags)}
-                        </div>
-                        {data.length !==0 && (<ProfileAndRating name={data.host.name} profilePic={data.host.picture} rating={data.rating}/>)}
-                    </div>                               
-                    <div className='location-folding'>
-                        <FoldingMenu menuTitle={"Description"} content={data.description}/>
-                        <FoldingMenu menuTitle={"Équipements"} content={data.equipments}/>
-                    </div>                    
-                <Footer/>
-            </div>
-        );
+    if (error) {
+        return <ErrorPage />;
     }
 
-    if(error){
-        return <ErrorPage/>
+    if (!locationDetails) {
+        return null; 
     }
 
-    return(
+
+    return (
         <div>
-            {buildLocation(locationDetails)}
+            <div className="location">
+                <Header />
+                <Carrousel images={locationDetails.pictures} />
+                <div className='infos-container'>
+                    <div className='title-and-tags'>
+                        <h1>{locationDetails.title}</h1>
+                        <span className='localisation'>{locationDetails.location}</span>
+                        <div className="tags-list">
+                            {locationDetails.tags.map((item) => (
+                                <span key={`detail-${item}`}>{item}</span>
+                            ))}
+                        </div>
+                    </div>
+                    <ProfileAndRating name={locationDetails.host.name} profilePic={locationDetails.host.picture} rating={locationDetails.rating} />
+                </div>
+                <div className='location-folding'>
+                    <FoldingMenu menuTitle={"Description"} content={locationDetails.description} />
+                    <FoldingMenu menuTitle={"Équipements"} content={locationDetails.equipments} />
+                </div>
+                <Footer />
+            </div>            
         </div>
     )
+
 }

@@ -11,11 +11,10 @@ export default function ProfileAndRating({ name, profilePic, rating }){
         );
     }
 
-
-      const stars = [];
-        for (let i = 0; i < 5; i++) {
-            stars.push(<Star key={i} filled={i < rating} />);
-        }
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+        stars.push(<Star key={i} filled={i < rating} />);
+    }
 
     return(
         <div className="profile-and-rating">

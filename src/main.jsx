@@ -1,37 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Root from "./routes/root";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { LocationProvider } from './../contexts/LocationDetailsContext.jsx';
+import Home from "./routes/root";
 import ErrorPage from "./routes/error-page";
 import Location from './routes/location';
 import About from './routes/about';
 import './css/index.css'
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/location",
-    element: <Location/>
-  },
-  {
-    path: "/about",
-    element : <About/>
-  },
-  {
-    path: "/location/:id",
-    element: <Location />,
-  }
-]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <Router>
+      <LocationProvider> 
+        <Routes>
+          <Route path="/" element={<Home />} errorElement={<ErrorPage />}/>
+          <Route path="/location/:id" element={<Location />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </LocationProvider>
+    </Router>
   </React.StrictMode>,
 )
+
