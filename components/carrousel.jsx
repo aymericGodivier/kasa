@@ -12,15 +12,15 @@ function Carrousel({ images }) {
         <div className="carrousel">
             {images.length > 1 && (
                 <>
-                    <img src='../../src/assets/Chevron.png' id='buttonPrev' onClick={() => handleClick('prev')}></img>
-                    <img src='../../src/assets/Chevron.png' id='buttonNext' onClick={() => handleClick('next')}></img>
+                    <img src='../../src/assets/Chevron.png' id='buttonPrev' data-testid='leftArrow' onClick={() => handleClick('prev')}></img>
+                    <img src='../../src/assets/Chevron.png' id='buttonNext' data-testid='rightArrow' onClick={() => handleClick('next')}></img>
                 </>
             )}
             <div className='carrousel-img'>
                 <img src={images[index]} alt={`Slide ${index + 1}`} />
             </div>            
             {images.length > 1 && (
-                <span className="slide-counter">{index + 1}/{images.length}</span>
+                <span className="slide-counter" data-testid='counter'>{index + 1}/{images.length}</span>
             )}
         </div>
     );
