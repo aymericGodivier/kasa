@@ -8,8 +8,6 @@ export const LocationProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  //ici, rajouter la fonction pour récupérer tous les travaux
-
   const fetchProperties = async () => {
     try {
         const response = await fetch('http://localhost:8080/api/properties');
@@ -21,7 +19,6 @@ export const LocationProvider = ({ children }) => {
   };
 
   const fetchDetails = async (id) => {
-    // un petit exemple pour te montrer comment implémenter le loader et l'erreur au niveau du contexte
     setLoading(true);
     setError(null);
     try {
